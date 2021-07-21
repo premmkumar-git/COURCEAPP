@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button routerLink="/places/offers/new">
+        <ion-icon name="add" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>My Offers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let offer of offers" [routerLink]="['/', 'places', 'offers', offer.id]">
+            <ion-thumbnail slot="start">
+              <ion-img [src]="offer.imageUrl"></ion-img>
+            </ion-thumbnail>
+            <ion-label>
+              <h1>{{offer.name}}</h1>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-content>
+  <!-- <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="new-offer">
+        <ion-label>new-offer</ion-label>
+        <ion-icon name="person-add-sharp"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="edit-offer">
+        <ion-label>edit-offer</ion-label>
+        <ion-icon name="create-sharp"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="offer-bookings">
+        <ion-label>offer-bookings</ion-label>
+        <ion-icon name="card"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs> -->
+
+</ion-content>
